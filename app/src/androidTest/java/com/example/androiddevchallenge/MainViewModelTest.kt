@@ -13,11 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge
 
-import androidx.compose.ui.graphics.Color
+import org.junit.Assert.assertEquals
+import org.junit.Test
 
-val primary200 = Color(0xFF6EC6FF)
-val primary500 = Color(0xFF2196F3)
-val primary700 = Color(0xFF0069C0)
-val secondary200 = Color(0xFFFFF59D)
+class MainViewModelTest {
+
+    @Test
+    fun getRunTimeRepresentation() {
+        val viewModel = MainViewModel()
+
+        var seconds = 100L
+        assertEquals("00:01:40", viewModel.getRunTimeRepresentation(seconds * 1000))
+    }
+}
